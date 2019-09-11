@@ -17,16 +17,20 @@
 	},
 	"homepage": "https://github.com/bycedric/commitlint-action#readme",
 	"scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "tsc"
+		"test": "jest",
+		"build": "tsc"
 	},
 	"dependencies": {
 		"@actions/core": "^1.1.0",
-		"@actions/github": "^1.1.0",
+		"@actions/exec": "^1.0.1",
+		"@actions/io": "^1.0.1",
 		"commitlint": "^8.1.0"
 	},
 	"devDependencies": {
+		"@types/jest": "^24.0.18",
 		"@types/node": "^12.7.5",
+		"jest": "^24.9.0",
+		"ts-jest": "^24.0.2",
 		"typescript": "^3.6.3"
 	}
 }

@@ -9,6 +9,8 @@ runs:
   using: node12
   main: build/index.js
 input:
+  config:
+    description: Path to the config file.
   from:
     description: Lower end of the commit range to lint. (uses @actions/github context by default)
   to:

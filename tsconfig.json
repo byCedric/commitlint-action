@@ -8,8 +8,7 @@
 		"outDir": "./build",
 		"rootDir": "./src",
 		"strict": true,
-		"noImplicitAny": false,
-		"esModuleInterop": true
+		"noImplicitAny": false
 	},
 	"exclude": [
 		"node_modules",
