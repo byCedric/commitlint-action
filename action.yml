@@ -12,7 +12,7 @@ input:
   config:
     description: Path to the config file.
   extends:
-    description: Shareable configurations to extend.
+    description: Shareable configuration to extend.
   from:
     description: Lower end of the commit range to lint. (uses action context by default)
   to:
