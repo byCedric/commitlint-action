@@ -29,7 +29,6 @@ export function install() {
 	}
 
 	core.addPath(path.join(__dirname, '..', 'node_modules', '.bin'));
-
 	return io.which(BINARY);
 }
 
