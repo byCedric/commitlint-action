@@ -39,7 +39,7 @@ exports.install = install;
 function run(commitlint, config) {
     return __awaiter(this, void 0, void 0, function* () {
         const parameters = Object.entries(config)
-            .map(([key, value]) => value ? `--${key}="${value}"` : '')
+            .map(([key, value]) => value ? `--${key}=${value}` : '')
             .filter(Boolean);
         return cli.exec(commitlint, parameters, { cwd: FOLDER });
     });
