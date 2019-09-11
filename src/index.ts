@@ -2,17 +2,20 @@ import * as core from '@actions/core';
 import * as commitlint from './commitlint';
 import * as context from './context';
 
-async function run() {
-	const cli = await commitlint.install();
+export async function run() {
 	const config = {
 		...context.config(),
 		...context.range(),
 	};
 
-	core.debug(`Commitlint ready to use!\n\t${cli}\n\t${JSON.stringify(config, null, 2)}`);
-	await commitlint.run(cli, config);
+	try {
+		await commitlint.run(
+			await commitlint.install(),
+			config
+		);
+	} catch (error) {
+		core.setFailed(error.message);
+	}
 }
 
-run().catch(
-	error => core.setFailed(error.message)
-);
+run();

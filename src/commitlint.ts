@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const FOLDER = process.env['GITHUB_WORKSPACE'] || '';
-const BINARY = 'commitlint'
+const BINARY = 'commitlint';
 
 export interface Config {
 	/** Path to the config file */
@@ -21,14 +21,14 @@ export interface Config {
  * If it isn't installed, adds the shipped Commitlint to the global path.
  * Eventually it returns the absolute path to the Commitlint binary.
  */
-export async function install() {
+export function install() {
 	const local = path.join(FOLDER, 'node_modules', '.bin', BINARY);
 
 	if (fs.existsSync(local)) {
 		return local;
 	}
 
-	core.addPath(path.resolve(__dirname, '..', 'node_modules', '.bin'));
+	core.addPath(path.join(__dirname, '..', 'node_modules', '.bin'));
 
 	return io.which(BINARY);
 }

@@ -14,10 +14,14 @@ const commitlint = require("./commitlint");
 const context = require("./context");
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        const cli = yield commitlint.install();
         const config = Object.assign(Object.assign({}, context.config()), context.range());
-        core.debug(`Commitlint ready to use!\n\t${cli}\n\t${JSON.stringify(config, null, 2)}`);
-        yield commitlint.run(cli, config);
+        try {
+            yield commitlint.run(yield commitlint.install(), config);
+        }
+        catch (error) {
+            core.setFailed(error.message);
+        }
     });
 }
-run().catch(error => core.setFailed(error.message));
+exports.run = run;
+run();

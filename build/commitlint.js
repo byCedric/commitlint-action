@@ -22,14 +22,12 @@ const BINARY = 'commitlint';
  * Eventually it returns the absolute path to the Commitlint binary.
  */
 function install() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const local = path.join(FOLDER, 'node_modules', '.bin', BINARY);
-        if (fs.existsSync(local)) {
-            return local;
-        }
-        core.addPath(path.resolve(__dirname, '..', 'node_modules', '.bin'));
-        return io.which(BINARY);
-    });
+    const local = path.join(FOLDER, 'node_modules', '.bin', BINARY);
+    if (fs.existsSync(local)) {
+        return local;
+    }
+    core.addPath(path.join(__dirname, '..', 'node_modules', '.bin'));
+    return io.which(BINARY);
 }
 exports.install = install;
 /**
