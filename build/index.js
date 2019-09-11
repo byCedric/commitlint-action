@@ -20,4 +20,4 @@ function run() {
         yield commitlint.run(cli, config);
     });
 }
-run();
+run().catch(error => core.setFailed(error.message));
