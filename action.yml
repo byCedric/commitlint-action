@@ -1,0 +1,15 @@
+---
+name: Commitlint GitHub Action
+author: Cedric van Putten <me@bycedric.com>
+description: Use Commitlint in GitHub Actions
+branding:
+  icon: git-commit
+  color: gray-dark
+runs:
+  using: node12
+  main: build/index.js
+input:
+  from:
+    description: Lower end of the commit range to lint. (uses @actions/github context by default)
+  to:
+    description: Upper end of the commit range to lint. (uses @actions/github context by default)

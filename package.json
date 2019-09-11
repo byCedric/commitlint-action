@@ -1,0 +1,32 @@
+{
+	"name": "commitlint-action",
+	"version": "0.0.0",
+	"description": "Use Commitlint in GitHub Actions",
+	"main": "build/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bycedric/commitlint-action.git"
+	},
+	"keywords": [
+		"commitlint"
+	],
+	"author": "Cedric van Putten <me@bycedric.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bycedric/commitlint-action/issues"
+	},
+	"homepage": "https://github.com/bycedric/commitlint-action#readme",
+	"scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc"
+	},
+	"dependencies": {
+		"@actions/core": "^1.1.0",
+		"@actions/github": "^1.1.0",
+		"commitlint": "^8.1.0"
+	},
+	"devDependencies": {
+		"@types/node": "^12.7.5",
+		"typescript": "^3.6.3"
+	}
+}
