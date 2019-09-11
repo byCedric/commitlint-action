@@ -22,13 +22,13 @@ export interface Config {
  * Eventually it returns the absolute path to the Commitlint binary.
  */
 export async function install() {
-	const local = path.join(FOLDER, 'node_modules', '@commitlint', 'cli', 'lib', 'cli.js');
+	const local = path.join(FOLDER, 'node_modules', '.bin', BINARY);
 
 	if (fs.existsSync(local)) {
 		return local;
 	}
 
-	core.addPath(path.join(__dirname, '..', 'node_modules', '@commitlint', 'cli', 'lib', 'cli.js'));
+	core.addPath(path.resolve(__dirname, '..', 'node_modules', '.bin'));
 
 	return io.which(BINARY);
 }
