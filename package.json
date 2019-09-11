@@ -8,7 +8,9 @@
 		"url": "git+https://github.com/bycedric/commitlint-action.git"
 	},
 	"keywords": [
-		"commitlint"
+		"commitlint",
+		"github",
+		"action"
 	],
 	"author": "Cedric van Putten <me@bycedric.com>",
 	"license": "MIT",
@@ -24,7 +26,8 @@
 		"@actions/core": "^1.1.0",
 		"@actions/exec": "^1.0.1",
 		"@actions/io": "^1.0.1",
-		"commitlint": "^8.1.0"
+		"@commitlint/cli": "^8.1.0",
+		"@commitlint/config-conventional": "^8.1.0"
 	},
 	"devDependencies": {
 		"@types/jest": "^24.0.18",

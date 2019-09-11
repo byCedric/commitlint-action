@@ -28,7 +28,7 @@ export async function install() {
 		return local;
 	}
 
-	core.addPath(path.resolve(__dirname, '..', 'node_modules', '.bin'));
+	core.addPath(path.join(__dirname, '..', 'node_modules', '.bin'));
 
 	return io.which(BINARY);
 }
