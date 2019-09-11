@@ -3,10 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core = require("@actions/core");
 /**
  * Determine the path of the configuration.
- * It uses the `config` input, if defined.
+ * It uses the `config` or `extends` input values, if defined.
  */
 function config() {
-    return { config: core.getInput('config') || undefined };
+    return {
+        config: core.getInput('config') || undefined,
+        extends: core.getInput('extends') || undefined,
+    };
 }
 exports.config = config;
 /**
