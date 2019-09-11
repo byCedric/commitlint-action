@@ -11,7 +11,9 @@ runs:
 input:
   config:
     description: Path to the config file.
+  extends:
+    description: Shareable configurations to extend.
   from:
-    description: Lower end of the commit range to lint. (uses @actions/github context by default)
+    description: Lower end of the commit range to lint. (uses action context by default)
   to:
-    description: Upper end of the commit range to lint. (uses @actions/github context by default)
+    description: Upper end of the commit range to lint. (uses action context by default)

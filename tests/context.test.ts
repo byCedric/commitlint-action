@@ -2,13 +2,19 @@ import * as context from '../src/context';
 
 describe('config', () => {
 	test('uses undefined by default', () => {
-		expect(context.config()).toMatchObject({ config: undefined });
+		expect(context.config()).toMatchObject({ config: undefined, extends: undefined });
 	});
 
 	test('uses config input', () => {
 		process.env['INPUT_CONFIG'] = '/path/to/config';
 		expect(context.config()).toMatchObject({ config: '/path/to/config' });
 		process.env['INPUT_CONFIG'] = '';
+	});
+
+	test('uses extends input', () => {
+		process.env['INPUT_EXTENDS'] = '@commitlint/config-conventional';
+		expect(context.config()).toMatchObject({ extends: '@commitlint/config-conventional' });
+		process.env['INPUT_EXTENDS'] = '';
 	});
 });
 

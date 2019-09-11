@@ -2,10 +2,13 @@ import * as core from '@actions/core';
 
 /**
  * Determine the path of the configuration.
- * It uses the `config` input, if defined.
+ * It uses the `config` or `extends` input values, if defined.
  */
 export function config() {
-	return { config: core.getInput('config') || undefined };
+	return {
+		config: core.getInput('config') || undefined,
+		extends: core.getInput('extends') || undefined,
+	};
 }
 
 /**

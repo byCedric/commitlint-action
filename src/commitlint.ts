@@ -10,6 +10,8 @@ const BINARY = 'commitlint';
 export interface Config {
 	/** Path to the config file */
 	config?: string;
+	/** Shareable configurations to extend */
+	extends?: string;
 	/** Lower end of the commit range to lint  */
 	from?: string;
 	/** Upper end of the commit range to lint  */
