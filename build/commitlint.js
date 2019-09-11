@@ -23,11 +23,11 @@ const BINARY = 'commitlint';
  */
 function install() {
     return __awaiter(this, void 0, void 0, function* () {
-        const local = path.join(FOLDER, 'node_modules', '.bin', BINARY);
+        const local = path.join(FOLDER, 'node_modules', '@commitlint', 'cli', 'lib', 'cli.js');
         if (fs.existsSync(local)) {
             return local;
         }
-        core.addPath(path.join(__dirname, '..', 'node_modules', '.bin'));
+        core.addPath(path.join(__dirname, '..', 'node_modules', '@commitlint', 'cli', 'lib', 'cli.js'));
         return io.which(BINARY);
     });
 }
